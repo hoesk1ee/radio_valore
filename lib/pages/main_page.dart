@@ -11,7 +11,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Radio Valore"),),
+      appBar: AppBar(title: const Text("Radio Valore"),),
     );
   }
 }
