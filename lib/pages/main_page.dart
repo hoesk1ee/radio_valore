@@ -56,14 +56,14 @@ class _MainPageState extends State<MainPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.home_outlined,
+                              Icons.announcement_outlined,
                               size: 32,
                             ),
                             SizedBox(
                               height: 4,
                             ),
                             Text(
-                              "Home",
+                              "Pengumuman",
                               style: TextStyle(fontSize: 9),
                             ),
                           ],
@@ -198,111 +198,73 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 24),
-                child: Center(
-                  child: Text(
-                    "Pengumuman",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
               Expanded(
-                flex: 2,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
+                flex: 3,
+                child: Column(
                   children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12),
-                        width: 165,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
-                          border: Border.all(),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Ini Pengumuman"),
-                            Text(
-                                "semua detail mengenai pengumuman akan ada disini")
-                          ],
-                        ),
-                      ),
+                    Text(
+                      "PENGUMUMAN",
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12),
-                        width: 165,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
-                          border: Border.all(),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Ini Pengumuman"),
-                            Text(
-                                "semua detail mengenai pengumuman akan ada disini")
-                          ],
-                        ),
-                      ),
+                    SizedBox(
+                      height: 32,
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12),
-                        width: 165,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
+                    Container(
+                      decoration: BoxDecoration(
                           border: Border.all(),
-                        ),
+                          borderRadius: BorderRadius.circular(24)),
+                      height: 150,
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.all(18.0),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Ini Pengumuman"),
+                            Text("Nama : Leonardo Liemantara"),
+                            Text("Tanggal : 24/10/2022"),
                             Text(
-                                "semua detail mengenai pengumuman akan ada disini")
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12),
-                        width: 165,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
-                          border: Border.all(),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Ini Pengumuman"),
-                            Text(
-                                "semua detail mengenai pengumuman akan ada disini")
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12),
-                        width: 165,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
-                          border: Border.all(),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Ini Pengumuman"),
-                            Text(
-                                "semua detail mengenai pengumuman akan ada disini")
+                                "Pesan : nnNOIAWNEONWEONAWOENAWNEOAWNENAWENAWENWAOENOWANEOWANEOAWNEOAAWOENOAWNE..."),
+                            Spacer(),
+                            GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      scrollable: true,
+                                      title: Center(
+                                        child: Text("Pengumuman"),
+                                      ),
+                                      content: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text("Nama : Leonard"),
+                                          Text("24/10/2022"),
+                                          Text("Pesan : AEBAUEBAWEONAWEBAWENAWEBWAIUBEUIAWN WAEUIAWNEIWANEIAWNE ANEAWOEAWEOAWEIOAOEAWOEOAWEOIAWEOAWOEWAOIEWOAIHEIOAWHEOIAHWOEIHIOEWHADASDAWEADAWDASDWADSDWASDWADWASDWASDWADASDAWDAWDWADASDWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA UNAWEUNAWENWAENAWU NWAUIENAWUNEUAIWN")
+                                        ],
+                                      ),
+                                      actions: [
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text("Back"),
+                                        )
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  "View Details",
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.blue),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -310,30 +272,6 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 24),
-                child: Container(
-                  width: double.infinity,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(36),
-                    border: Border.all(),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CircleAvatar(
-                          child: Icon(Icons.home_filled, size: 24),
-                        ),
-                        Icon(Icons.add, size: 36),
-                        Icon(Icons.settings, size: 36),
-                      ],
-                    ),
-                  ),
-                ),
-              )
             ],
           ),
         ),
