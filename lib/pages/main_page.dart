@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radio_volare/resources/custom_menuButton.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -12,264 +13,72 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: const EdgeInsets.only(right: 18.0, top: 18, bottom: 18),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 48,
-                  top: 10,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(Icons.arrow_back_ios_new_rounded),
-                    Text(
-                      "Home",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    Icon(
-                      Icons.supervised_user_circle_outlined,
-                      size: 28,
-                    )
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: GridView.count(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 24,
-                  crossAxisSpacing: 24,
-                  children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.announcement_outlined,
-                              size: 32,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              "Pengumuman",
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.groups_outlined,
-                              size: 32,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              "Absensi",
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.library_books_outlined,
-                              size: 32,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              "Laporan Absensi",
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.calendar_today_outlined,
-                              size: 32,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              "Log Kerja",
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.schedule_outlined,
-                              size: 32,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              "Jadwal Siaran",
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.radio_outlined,
-                              size: 32,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              "ROTW",
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Column(
-                  children: [
-                    Text(
-                      "PENGUMUMAN",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Align(
+                    child: Container(
                       height: 32,
-                    ),
-                    Container(
+                      width: 175,
                       decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(24)),
-                      height: 150,
-                      width: double.infinity,
+                        color: Colors.blueAccent,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(18),
+                          bottomRight: Radius.circular(18),
+                        ),
+                      ),
                       child: Padding(
-                        padding: const EdgeInsets.all(18.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Nama : Leonardo Liemantara"),
-                            Text("Tanggal : 24/10/2022"),
-                            Text(
-                                "Pesan : nnNOIAWNEONWEONAWOENAWNEOAWNENAWENAWENWAOENOWANEOWANEOAWNEOAAWOENOAWNE..."),
-                            Spacer(),
-                            GestureDetector(
-                              onTap: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      scrollable: true,
-                                      title: Center(
-                                        child: Text("Pengumuman"),
-                                      ),
-                                      content: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Nama : Leonard"),
-                                          Text("24/10/2022"),
-                                          Text("Pesan : AEBAUEBAWEONAWEBAWENAWEBWAIUBEUIAWN WAEUIAWNEIWANEIAWNE ANEAWOEAWEOAWEIOAOEAWOEOAWEOIAWEOAWOEWAOIEWOAIHEIOAWHEOIAHWOEIHIOEWHADASDAWEADAWDASDWADSDWASDWADWASDWASDWADASDAWDAWDWADASDWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA UNAWEUNAWENWAENAWU NWAUIENAWUNEUAIWN")
-                                        ],
-                                      ),
-                                      actions: [
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text("Back"),
-                                        )
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
-                              child: Align(
-                                alignment: Alignment.centerRight,
-                                child: Text(
-                                  "View Details",
-                                  style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.blue),
-                                ),
-                              ),
-                            ),
-                          ],
+                        padding: const EdgeInsets.only(left: 18.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Halo, Leonardo",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
-                  ],
+                  ),
+                  CircleAvatar(
+                    child: Icon(Icons.group),
+                  )
+                ],
+              ),
+              Expanded(
+                flex: 1,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 18.0, top: 28, bottom: 18),
+                  child: GridView.count(
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    crossAxisCount: 2,
+                    children: [
+                      CustomMenuButton(
+                        icons: Icons.developer_board_outlined,
+                        text: "Papan Pesan",
+                      ),
+                      CustomMenuButton(
+                        icons: Icons.radio,
+                        text: "Siaran",
+                      ),
+                      CustomMenuButton(
+                        icons: Icons.topic_outlined,
+                        text: "Topik",
+                      ),
+                      CustomMenuButton(
+                        icons: Icons.developer_board_outlined,
+                        text: "ROTW",
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -279,3 +88,31 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
+
+//showDialog(
+//                                   context: context,
+//                                   builder: (BuildContext context) {
+//                                     return AlertDialog(
+//                                       scrollable: true,
+//                                       title: const Center(
+//                                         child: Text("Pengumuman"),
+//                                       ),
+//                                       content: Column(
+//                                         crossAxisAlignment: CrossAxisAlignment.start,
+//                                         children: const [
+//                                           Text("Nama : Leonard"),
+//                                           Text("24/10/2022"),
+//                                           Text("Pesan : AEBAUEBAWEONAWEBAWENAWEBWAIUBEUIAWN WAEUIAWNEIWANEIAWNE ANEAWOEAWEOAWEIOAOEAWOEOAWEOIAWEOAWOEWAOIEWOAIHEIOAWHEOIAHWOEIHIOEWHADASDAWEADAWDASDWADSDWASDWADWASDWASDWADASDAWDAWDWADASDWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA UNAWEUNAWENWAENAWU NWAUIENAWUNEUAIWN")
+//                                         ],
+//                                       ),
+//                                       actions: [
+//                                         ElevatedButton(
+//                                           onPressed: () {
+//                                             Navigator.pop(context);
+//                                           },
+//                                           child: const Text("Back"),
+//                                         )
+//                                       ],
+//                                     );
+//                                   },
+//                                 );
