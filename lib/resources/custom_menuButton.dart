@@ -1,45 +1,35 @@
 import 'package:flutter/material.dart';
 
 class CustomMenuButton extends StatelessWidget {
-  const CustomMenuButton({Key? key, required this.icons, required this.text}) : super(key: key);
+  const CustomMenuButton({Key? key, required this.onTap, required this.icons, required this.text}) : super(key: key);
 
   final IconData icons;
   final String text;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.blueAccent,
-        borderRadius: BorderRadius.circular(18),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(18.0),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey,
+                blurRadius: 4,
+                offset: Offset(0, 3)
+            ),
+          ],
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(18),
+        ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              flex: 4,
-              child: Center(
-                child: Icon(
-                  icons,
-                  size: 48,
-                ),
-              ),
-            ),
-            Expanded(
-              child: Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  text,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            )
+            Icon(icons, size: 42,),
+            SizedBox(height: 8,),
+            Text(text, style: TextStyle(fontWeight: FontWeight.bold),)
           ],
         ),
       ),

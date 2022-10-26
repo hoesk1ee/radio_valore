@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:radio_volare/resources/custom_menuButton.dart';
 
+import '../resources/constant.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
@@ -12,203 +14,169 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(right: 18.0, top: 18, bottom: 18),
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Align(
-                      child: Container(
-                        height: 32,
-                        width: 175,
-                        decoration: BoxDecoration(
-                          color: Colors.blueAccent,
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(18),
-                            bottomRight: Radius.circular(18),
+      body: Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(18),
+              bottomLeft: Radius.circular(18),
+            ),
+            child: Container(
+              height: 250,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/background.png",
+                    ),
+                    fit: BoxFit.cover),
+              ),
+            ),
+          ),
+          SafeArea(
+            child: Container(
+              margin: EdgeInsets.all(18),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.supervised_user_circle_outlined,
+                        color: Colors.white,
+                        size: 72,
+                      ),
+                      SizedBox(
+                        width: 18,
+                      ),
+                      Text(
+                        "Hai, Leonardo",
+                        style: textStyle,
+                      )
+                    ],
+                  ),
+                  //Divider with Bottom Padding
+                  Divider(
+                    thickness: 1,
+                    color: Colors.white,
+                  ),
+                  const Text(
+                    "Pengumuman Terbaru",
+                    style: textStyle,
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  //Announcement Card
+                  Container(
+                    width: double.infinity,
+                    height: 185,
+                    decoration: BoxDecoration(
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 12,
+                            offset: Offset(2, 4),
                           ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
+                        ],
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(18),
+                        color: Colors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Perihal : Waktu Absensi",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                          Text(
+                            "Rabu, 26 Oktober 2022 | 9:59 PM",
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          Text(
+                              "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
+                          Spacer(),
+                          Align(
+                            alignment: Alignment.centerRight,
                             child: Text(
-                              "Halo, Leonardo",
+                              "Selengkapnya »",
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                color: Colors.blue,
+                                decoration: TextDecoration.underline,
+                              ),
                             ),
-                          ),
-                        ),
+                          )
+                        ],
                       ),
                     ),
-                    CircleAvatar(
-                      child: Icon(Icons.group),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height/2,
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(left: 18.0, top: 28, bottom: 18),
+                  ),
+                  SizedBox(
+                    height: 18,
+                  ),
+                  Expanded(
                     child: GridView.count(
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 18,
+                      mainAxisSpacing: 18,
                       crossAxisCount: 2,
+                      childAspectRatio: 1.25,
                       children: [
                         CustomMenuButton(
-                          icons: Icons.developer_board_outlined,
-                          text: "Papan Pesan",
+                          icons: Icons.chat_outlined,
+                          text: "Pengumuman",
+                          onTap: () {},
                         ),
                         CustomMenuButton(
-                          icons: Icons.radio,
+                          icons: Icons.cell_tower_outlined,
                           text: "Siaran",
+                          onTap: () {},
                         ),
                         CustomMenuButton(
-                          icons: Icons.topic_outlined,
+                          icons: Icons.calendar_today_outlined,
                           text: "Topik",
+                          onTap: () {},
                         ),
                         CustomMenuButton(
-                          icons: Icons.developer_board_outlined,
+                          icons: Icons.my_library_music_outlined,
                           text: "ROTW",
+                          onTap: () {},
                         ),
                       ],
                     ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 18),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Pengumuman"),
-                      SizedBox(height: 18,),
-                      SizedBox(
-                        height: 75,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(right: 18),
-                              height: 75,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.blueAccent,
-                                borderRadius: BorderRadius.circular(18),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Nama : Awang"),
-                                    Text("Tanggal : 26/10/22")
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 18),
-                              height: 75,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.blueAccent,
-                                borderRadius: BorderRadius.circular(18),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Nama : Awang"),
-                                    Text("Tanggal : 26/10/22")
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 18),
-                              height: 75,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.blueAccent,
-                                borderRadius: BorderRadius.circular(18),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Nama : Awang"),
-                                    Text("Tanggal : 26/10/22")
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
+                ],
+              ),
             ),
-          ),
+          )
+        ],
+      ),
+      bottomNavigationBar: SizedBox(
+        height: 80,
+        child: BottomNavigationBar(
+          currentIndex: 0,
+          selectedItemColor: Color(0xFF1246AD),
+          unselectedItemColor: Colors.grey,
+          showUnselectedLabels: true,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_filled),
+              label: "Beranda",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list_alt_outlined),
+              label: "Absensi",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline),
+              label: "Profil",
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
-//Container(
-//                       height: 75,
-//                       width: double.infinity,
-//                       decoration: BoxDecoration(
-//                         color: Colors.blueAccent,
-//                         borderRadius: BorderRadius.circular(18),
-//                       ),
-//                       child: Padding(
-//                         padding: const EdgeInsets.all(12.0),
-//                         child: Column(
-//                           crossAxisAlignment: CrossAxisAlignment.start,
-//                           children: [
-//                             Text("Nama : Awang"),
-//                             Text("Tanggal : 26/10/22")
-//                           ],
-//                         ),
-//                       ),
-//                     ),
-
-//showDialog(
-//                                   context: context,
-//                                   builder: (BuildContext context) {
-//                                     return AlertDialog(
-//                                       scrollable: true,
-//                                       title: const Center(
-//                                         child: Text("Pengumuman"),
-//                                       ),
-//                                       content: Column(
-//                                         crossAxisAlignment: CrossAxisAlignment.start,
-//                                         children: const [
-//                                           Text("Nama : Leonard"),
-//                                           Text("24/10/2022"),
-//                                           Text("Pesan : AEBAUEBAWEONAWEBAWENAWEBWAIUBEUIAWN WAEUIAWNEIWANEIAWNE ANEAWOEAWEOAWEIOAOEAWOEOAWEOIAWEOAWOEWAOIEWOAIHEIOAWHEOIAHWOEIHIOEWHADASDAWEADAWDASDWADSDWASDWADWASDWASDWADASDAWDAWDWADASDWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA UNAWEUNAWENWAENAWU NWAUIENAWUNEUAIWN")
-//                                         ],
-//                                       ),
-//                                       actions: [
-//                                         ElevatedButton(
-//                                           onPressed: () {
-//                                             Navigator.pop(context);
-//                                           },
-//                                           child: const Text("Back"),
-//                                         )
-//                                       ],
-//                                     );
-//                                   },
-//                                 );
