@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:radio_volare/resources/custom_menuButton.dart';
 
 import '../resources/constant.dart';
+import 'announcement_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -128,7 +129,9 @@ class _MainPageState extends State<MainPage> {
                         CustomMenuButton(
                           icons: Icons.chat_outlined,
                           text: "Pengumuman",
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AnnouncementPage()));
+                          },
                         ),
                         CustomMenuButton(
                           icons: Icons.cell_tower_outlined,
