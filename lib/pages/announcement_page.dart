@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../resources/constant.dart';
+import '../resources/custom_headerContent.dart';
+import '../resources/custom_headerStyle.dart';
 import 'addAnnouncement_page.dart';
 
 class AnnouncementPage extends StatefulWidget {
@@ -16,22 +18,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
     return Scaffold(
       body: Stack(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(18),
-              bottomLeft: Radius.circular(18),
-            ),
-            child: Container(
-              height: 125,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/background.png",
-                    ),
-                    fit: BoxFit.cover),
-              ),
-            ),
-          ),
+          CustomHeaderStyle(),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(18.0),
@@ -39,40 +26,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                 children: [
                   Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: Icon(
-                              Icons.arrow_back_outlined,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Expanded(
-                            child: SizedBox(
-                              width: 18,
-                            ),
-                          ),
-                          Expanded(
-                            flex: 5,
-                            child: Text(
-                              "Pengumuman",
-                              style: textStyle,
-                            ),
-                          )
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 18.0, right: 18, bottom: 24),
-                        child: Divider(
-                          color: Colors.white,
-                          thickness: 1,
-                        ),
-                      ),
+                      CustomHeaderContent(label: "Pengumuman"),
+                      bottomLine,
                       Container(
                         height: MediaQuery.of(context).size.height,
                         child: SingleChildScrollView(
