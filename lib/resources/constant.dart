@@ -12,3 +12,5 @@ const bottomLine = Padding(
     thickness: 1,
   ),
 );
+
+const textFieldFontSize = TextStyle(fontSize: 12);
