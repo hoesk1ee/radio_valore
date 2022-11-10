@@ -18,23 +18,23 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
     return Scaffold(
       body: Stack(
         children: [
-          CustomHeaderStyle(),
+          const CustomHeaderStyle(),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.only(left: 18.0, right: 18, bottom: 18),
               child: Column(
                 children: [
                   Column(
                     children: [
-                      CustomHeaderContent(label: "Pengumuman"),
+                      const CustomHeaderContent(label: "Pengumuman"),
                       bottomLine,
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height,
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
                               Container(
-                                margin: EdgeInsets.only(bottom: 18),
+                                margin: const EdgeInsets.only(bottom: 18),
                                 width: double.infinity,
                                 height: 185,
                                 decoration: BoxDecoration(
@@ -51,7 +51,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(18.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: const [
                                       Text(
                                         "Perihal : Waktu Absensi",
@@ -76,7 +77,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                           "Selengkapnya »",
                                           style: TextStyle(
                                             color: Colors.blue,
-                                            decoration: TextDecoration.underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       )
@@ -85,7 +87,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(bottom: 18),
+                                margin: const EdgeInsets.only(bottom: 18),
                                 width: double.infinity,
                                 height: 185,
                                 decoration: BoxDecoration(
@@ -102,7 +104,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(18.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: const [
                                       Text(
                                         "Perihal : Waktu Absensi",
@@ -127,7 +130,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                           "Selengkapnya »",
                                           style: TextStyle(
                                             color: Colors.blue,
-                                            decoration: TextDecoration.underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       )
@@ -136,7 +140,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(bottom: 18),
+                                margin: const EdgeInsets.only(bottom: 18),
                                 width: double.infinity,
                                 height: 185,
                                 decoration: BoxDecoration(
@@ -153,7 +157,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(18.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: const [
                                       Text(
                                         "Perihal : Waktu Absensi",
@@ -178,7 +183,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                           "Selengkapnya »",
                                           style: TextStyle(
                                             color: Colors.blue,
-                                            decoration: TextDecoration.underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       )
@@ -187,7 +193,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(bottom: 18),
+                                margin: const EdgeInsets.only(bottom: 18),
                                 width: double.infinity,
                                 height: 185,
                                 decoration: BoxDecoration(
@@ -204,7 +210,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(18.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: const [
                                       Text(
                                         "Perihal : Waktu Absensi",
@@ -229,7 +236,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                           "Selengkapnya »",
                                           style: TextStyle(
                                             color: Colors.blue,
-                                            decoration: TextDecoration.underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       )
@@ -238,7 +246,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(bottom: 18),
+                                margin: const EdgeInsets.only(bottom: 18),
                                 width: double.infinity,
                                 height: 185,
                                 decoration: BoxDecoration(
@@ -255,7 +263,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(18.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: const [
                                       Text(
                                         "Perihal : Waktu Absensi",
@@ -280,7 +289,8 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                           "Selengkapnya »",
                                           style: TextStyle(
                                             color: Colors.blue,
-                                            decoration: TextDecoration.underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       )
@@ -301,11 +311,14 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF1246AD),
+        backgroundColor: const Color(0xFF1246AD),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => AddAnnouncementPage()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AddAnnouncementPage()));
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
