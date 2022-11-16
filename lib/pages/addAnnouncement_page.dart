@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:radio_volare/resources/custom_actionButton.dart';
 import '../resources/constant.dart';
 import '../resources/custom_headerContent.dart';
 import '../resources/custom_headerStyle.dart';
@@ -18,14 +21,26 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
   static DateTime date = DateTime(now.year, now.month, now.day);
   final dayName = DateFormat('EEEE').format(date);
   final monthName = DateFormat('MMMM').format(date);
+  String _timeString = "00";
 
-  // void updateUI() {
-  //   setState(() {
-  //     var timeHour = now.hour;
-  //     var timeMinute = now.minute;
-  //     var timeSecond = now.second;
-  //   });
-  // }
+  @override
+  void initState() {
+    _timeString = _formatDateTime(DateTime.now());
+    Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());
+    super.initState();
+  }
+
+  void _getTime() {
+    final DateTime now = DateTime.now();
+    final String formattedDateTime = _formatDateTime(now);
+    setState(() {
+      _timeString = formattedDateTime;
+    });
+  }
+
+  String _formatDateTime(DateTime dateTime) {
+    return DateFormat('hh:mm:ss').format(dateTime);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +81,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 18),
+                  const SizedBox(height: 12),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 6.0),
                     child: const Text("Tanggal"),
@@ -83,7 +98,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                           Padding(
                             padding: const EdgeInsets.only(left: 18),
                             child: Text(
-                              "${date.day} $monthName ${date.year}",
+                              "${date.day} $monthName ${date.year} - $_timeString",
                               style: textFieldFontSize,
                             ),
                           ),
@@ -110,35 +125,45 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                           ),
                         ],
                       )),
-                  const SizedBox(height: 18),
+                  const SizedBox(height: 12),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 6.0),
                     child: const Text("Deskripsi"),
                   ),
-                  Container(
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFEAEAEA),
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 18.0, right: 18, top: 6),
-                      child: TextField(
-                        maxLines: 10,
-                        style: textFieldFontSize,
-                        controller: _descriptionController,
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(bottom: 4),
-                          border: InputBorder.none,
-                          hintText: "Masukkan Deskripsi",
-                          hintStyle: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
+                  Expanded(
+                    child: Container(
+                      height: 150,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFEAEAEA),
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 18.0, right: 18, top: 12, bottom: 12),
+                        child: TextField(
+                          maxLines: 10,
+                          style: textFieldFontSize,
+                          controller: _descriptionController,
+                          decoration: const InputDecoration(
+                            contentPadding: EdgeInsets.only(bottom: 4),
+                            border: InputBorder.none,
+                            hintText: "Masukkan Deskripsi",
+                            hintStyle: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  CustomActionButton(
+                    onTap: () {},
+                    text: "Simpan",
+                    buttonColor: saveButtonColor,
                   ),
                 ],
               ),

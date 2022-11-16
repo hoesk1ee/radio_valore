@@ -11,7 +11,7 @@ class CustomHeaderStyle extends StatelessWidget {
         bottomLeft: Radius.circular(18),
       ),
       child: Container(
-        height: 125,
+        height: MediaQuery.of(context).size.height / 7,
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
