@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radio_volare/pages/broadcast_page.dart';
 import 'package:radio_volare/resources/custom_menuButton.dart';
 
 import '../resources/constant.dart';
@@ -130,13 +131,21 @@ class _MainPageState extends State<MainPage> {
                           icons: Icons.chat_outlined,
                           text: "Pengumuman",
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => AnnouncementPage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AnnouncementPage()));
                           },
                         ),
                         CustomMenuButton(
                           icons: Icons.cell_tower_outlined,
                           text: "Siaran",
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BroadcastPage()));
+                          },
                         ),
                         CustomMenuButton(
                           icons: Icons.calendar_today_outlined,
