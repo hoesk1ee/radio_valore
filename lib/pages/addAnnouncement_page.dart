@@ -19,13 +19,13 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
   final dayName = DateFormat('EEEE').format(date);
   final monthName = DateFormat('MMMM').format(date);
 
-  void updateUI() {
-    setState(() {
-      var timeHour = now.hour;
-      var timeMinute = now.minute;
-      var timeSecond = now.second;
-    });
-  }
+  // void updateUI() {
+  //   setState(() {
+  //     var timeHour = now.hour;
+  //     var timeMinute = now.minute;
+  //     var timeSecond = now.second;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                           Padding(
                             padding: const EdgeInsets.only(left: 18),
                             child: Text(
-                              "${date.day} $monthName ${date.year} - ${now.hour}:${now.minute}",
+                              "${date.day} $monthName ${date.year}",
                               style: textFieldFontSize,
                             ),
                           ),
