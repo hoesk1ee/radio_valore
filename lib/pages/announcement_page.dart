@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radio_volare/resources/custom_cardContent.dart';
 
 import '../resources/constant.dart';
 import '../resources/custom_headerContent.dart';
@@ -21,7 +22,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
           const CustomHeaderStyle(),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.only(left: 18.0, right: 18, bottom: 18),
+              padding: bodyPadding,
               child: Column(
                 children: [
                   Column(
@@ -33,271 +34,255 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
-                              Container(
-                                margin: const EdgeInsets.only(bottom: 18),
-                                width: double.infinity,
-                                height: 185,
-                                decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 12,
-                                        offset: Offset(2, 4),
-                                      ),
-                                    ],
-                                    border: Border.all(color: Colors.grey),
-                                    borderRadius: BorderRadius.circular(18),
-                                    color: Colors.white),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(18.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        "Perihal : Waktu Absensi",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                      Text(
-                                        "Rabu, 26 Oktober 2022 | 9:59 PM",
-                                        style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                          "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
-                                      Spacer(),
-                                      Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Text(
-                                          "Selengkapnya »",
+                              CardContent(
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(18.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Perihal : Waktu Absensi",
                                           style: TextStyle(
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16),
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(bottom: 18),
-                                width: double.infinity,
-                                height: 185,
-                                decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 12,
-                                        offset: Offset(2, 4),
-                                      ),
-                                    ],
-                                    border: Border.all(color: Colors.grey),
-                                    borderRadius: BorderRadius.circular(18),
-                                    color: Colors.white),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(18.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        "Perihal : Waktu Absensi",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                      Text(
-                                        "Rabu, 26 Oktober 2022 | 9:59 PM",
-                                        style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                          "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
-                                      Spacer(),
-                                      Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Text(
-                                          "Selengkapnya »",
+                                        Text(
+                                          "Rabu, 26 Oktober 2022 | 9:59 PM",
                                           style: TextStyle(
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
+                                              color: Colors.grey, fontSize: 12),
                                         ),
-                                      )
-                                    ],
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                            "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
+                                        Spacer(),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: Text(
+                                              "Selengkapnya »",
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                                decoration:
+                                                    TextDecoration.underline,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(bottom: 18),
-                                width: double.infinity,
-                                height: 185,
-                                decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 12,
-                                        offset: Offset(2, 4),
-                                      ),
-                                    ],
-                                    border: Border.all(color: Colors.grey),
-                                    borderRadius: BorderRadius.circular(18),
-                                    color: Colors.white),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(18.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        "Perihal : Waktu Absensi",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                      Text(
-                                        "Rabu, 26 Oktober 2022 | 9:59 PM",
-                                        style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                          "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
-                                      Spacer(),
-                                      Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Text(
-                                          "Selengkapnya »",
+                                  height: 185),
+                              CardContent(
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(18.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Perihal : Waktu Absensi",
                                           style: TextStyle(
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16),
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(bottom: 18),
-                                width: double.infinity,
-                                height: 185,
-                                decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 12,
-                                        offset: Offset(2, 4),
-                                      ),
-                                    ],
-                                    border: Border.all(color: Colors.grey),
-                                    borderRadius: BorderRadius.circular(18),
-                                    color: Colors.white),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(18.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        "Perihal : Waktu Absensi",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                      Text(
-                                        "Rabu, 26 Oktober 2022 | 9:59 PM",
-                                        style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                          "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
-                                      Spacer(),
-                                      Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Text(
-                                          "Selengkapnya »",
+                                        Text(
+                                          "Rabu, 26 Oktober 2022 | 9:59 PM",
                                           style: TextStyle(
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
+                                              color: Colors.grey, fontSize: 12),
                                         ),
-                                      )
-                                    ],
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                            "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
+                                        Spacer(),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: Text(
+                                              "Selengkapnya »",
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                                decoration:
+                                                    TextDecoration.underline,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(bottom: 18),
-                                width: double.infinity,
-                                height: 185,
-                                decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 12,
-                                        offset: Offset(2, 4),
-                                      ),
-                                    ],
-                                    border: Border.all(color: Colors.grey),
-                                    borderRadius: BorderRadius.circular(18),
-                                    color: Colors.white),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(18.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        "Perihal : Waktu Absensi",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                      Text(
-                                        "Rabu, 26 Oktober 2022 | 9:59 PM",
-                                        style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                          "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
-                                      Spacer(),
-                                      Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Text(
-                                          "Selengkapnya »",
+                                  height: 185),
+                              CardContent(
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(18.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Perihal : Waktu Absensi",
                                           style: TextStyle(
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16),
                                         ),
-                                      )
-                                    ],
+                                        Text(
+                                          "Rabu, 26 Oktober 2022 | 9:59 PM",
+                                          style: TextStyle(
+                                              color: Colors.grey, fontSize: 12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                            "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
+                                        Spacer(),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: Text(
+                                              "Selengkapnya »",
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                                decoration:
+                                                    TextDecoration.underline,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ),
+                                  height: 185),
+                              CardContent(
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(18.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Perihal : Waktu Absensi",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16),
+                                        ),
+                                        Text(
+                                          "Rabu, 26 Oktober 2022 | 9:59 PM",
+                                          style: TextStyle(
+                                              color: Colors.grey, fontSize: 12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                            "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
+                                        Spacer(),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: Text(
+                                              "Selengkapnya »",
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                                decoration:
+                                                    TextDecoration.underline,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  height: 185),
+                              CardContent(
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(18.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Perihal : Waktu Absensi",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16),
+                                        ),
+                                        Text(
+                                          "Rabu, 26 Oktober 2022 | 9:59 PM",
+                                          style: TextStyle(
+                                              color: Colors.grey, fontSize: 12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                            "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
+                                        Spacer(),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: Text(
+                                              "Selengkapnya »",
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                                decoration:
+                                                    TextDecoration.underline,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  height: 185),
+                              CardContent(
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(18.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        Text(
+                                          "Perihal : Waktu Absensi",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16),
+                                        ),
+                                        Text(
+                                          "Rabu, 26 Oktober 2022 | 9:59 PM",
+                                          style: TextStyle(
+                                              color: Colors.grey, fontSize: 12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                            "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
+                                        Spacer(),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: Text(
+                                            "Selengkapnya »",
+                                            style: TextStyle(
+                                              color: Colors.blue,
+                                              decoration:
+                                                  TextDecoration.underline,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  height: 185),
                             ],
                           ),
                         ),

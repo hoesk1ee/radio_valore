@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radio_volare/pages/bcSchedule_page.dart';
 import 'package:radio_volare/resources/constant.dart';
 import 'package:radio_volare/resources/custom_broadcastButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
@@ -38,7 +39,12 @@ class _BroadcastPageState extends State<BroadcastPage> {
                   CustomBroadcastButton(
                     icon: Icons.schedule,
                     text: "Jadwal Siaran",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BroadcastSchedule()));
+                    },
                   ),
                 ],
               ),

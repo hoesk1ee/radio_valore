@@ -18,3 +18,5 @@ const saveButtonColor = Color(0xFF1246AD);
 const textStyleWithoutBold = TextStyle(color: Colors.white, fontSize: 16);
 
 const cancelButtonColor = Color(0xffD1D3D9);
+
+const bodyPadding = EdgeInsets.only(left: 18.0, right: 18, bottom: 18);
