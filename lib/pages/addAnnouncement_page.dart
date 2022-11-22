@@ -70,7 +70,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                         style: textFieldFontSize,
                         controller: _textController,
                         decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(bottom: 4),
+                          contentPadding: EdgeInsets.zero,
                           border: InputBorder.none,
                           hintText: "Masukkan Perihal",
                           hintStyle: TextStyle(
@@ -145,7 +145,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                           style: textFieldFontSize,
                           controller: _descriptionController,
                           decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.only(bottom: 4),
+                            contentPadding: EdgeInsets.zero,
                             border: InputBorder.none,
                             hintText: "Masukkan Deskripsi",
                             hintStyle: TextStyle(

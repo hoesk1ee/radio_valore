@@ -16,22 +16,19 @@ class CustomActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 18.0),
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          decoration: BoxDecoration(
-            color: buttonColor,
-            borderRadius: BorderRadius.circular(18),
-          ),
-          height: 65,
-          width: double.infinity,
-          child: Center(
-            child: Text(
-              text,
-              style: textStyleWithoutBold,
-            ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: buttonColor,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        height: 65,
+        width: double.infinity,
+        child: Center(
+          child: Text(
+            text,
+            style: textStyleWithoutBold,
           ),
         ),
       ),
