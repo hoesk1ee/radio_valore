@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:radio_volare/pages/addBcShedule_page.dart';
 import 'package:radio_volare/resources/constant.dart';
 import 'package:radio_volare/resources/custom_cardContent.dart';
+import 'package:radio_volare/resources/custom_floatingButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 import 'package:radio_volare/resources/custom_headerStyle.dart';
 
@@ -12,16 +14,6 @@ class BroadcastSchedule extends StatefulWidget {
 }
 
 class _BroadcastScheduleState extends State<BroadcastSchedule> {
-  // List dayList = [
-  //   "Senin",
-  //   "Selasa",
-  //   "Rabu",
-  //   "Kamis",
-  //   "Jumat",
-  //   "Sabtu",
-  //   "Minggu"
-  // ];
-
   List<DropdownMenuItem<String>> get dayList {
     List<DropdownMenuItem<String>> menuItems = [
       DropdownMenuItem(child: Text("Senin"), value: "Senin"),
@@ -86,58 +78,61 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
                         height: 18,
                       ),
                       //Content
-                      SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            for (int i = 0; i < 10; i++)
-                              CardContent(
-                                content: Padding(
-                                  padding: EdgeInsets.all(18),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text("Ruang Publik"),
-                                          Spacer(),
-                                          Text("09:00 - 10:00")
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 8,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.person,
-                                            size: 18,
-                                          ),
-                                          SizedBox(
-                                            width: 8,
-                                          ),
-                                          Text(
-                                            "Orang",
-                                            style: TextStyle(fontSize: 11),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 8,
-                                      ),
-                                      Text(
-                                        "Mengingatkan kembali kepada semua petugas, bahwa hujan deras sekali kawan :). Jangan lupa beli kopi untuk hari esok.",
-                                        style: textFieldFontSize,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                height: 165,
-                              ),
-                          ],
-                        ),
-                      )
                     ],
+                  ),
+                  Expanded(
+                    child: Scrollbar(
+                      isAlwaysShown: true,
+                      thickness: 5,
+                      radius: Radius.circular(18),
+                      child: ListView.builder(
+                          itemCount: 8,
+                          itemBuilder: (BuildContext context, int index) {
+                            return CardContent(
+                              content: Padding(
+                                padding: EdgeInsets.all(18),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text("Ruang Publik"),
+                                        Spacer(),
+                                        Text("09:00 - 10:00")
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.person,
+                                          size: 18,
+                                        ),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          "Orang",
+                                          style: TextStyle(fontSize: 11),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    Text(
+                                      "Mengingatkan kembali kepada semua petugas, bahwa hujan deras sekali kawan :). Jangan lupa beli kopi untuk hari esok.",
+                                      style: textFieldFontSize,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              height: 165,
+                            );
+                          }),
+                    ),
                   )
                 ],
               ),
@@ -145,6 +140,12 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
           ),
         ],
       ),
+      floatingActionButton: CustomFloatingButton(onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => AddBroadcastSchedulePage()));
+      }),
     );
   }
 }

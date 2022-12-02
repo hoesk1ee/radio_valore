@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:radio_volare/resources/custom_actionButton.dart';
+import 'package:radio_volare/resources/custom_inputTextField.dart';
 import '../resources/constant.dart';
 import '../resources/custom_headerContent.dart';
 import '../resources/custom_headerStyle.dart';
@@ -56,39 +57,18 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                 children: [
                   const CustomHeaderContent(label: "Buat Pengumuman"),
                   bottomLine,
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 6.0),
-                    child: const Text("Perihal"),
+                  const Text("Perihal"),
+                  CustomInputTextField(
+                    controller: _textController,
+                    hintText: "Masukkan Perihal",
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: const Color(0xFFEAEAEA),
-                        borderRadius: BorderRadius.circular(18)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 18.0),
-                      child: TextField(
-                        style: textFieldFontSize,
-                        controller: _textController,
-                        decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.zero,
-                          border: InputBorder.none,
-                          hintText: "Masukkan Perihal",
-                          hintStyle: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 6.0),
                     child: const Text("Tanggal"),
                   ),
                   Container(
                       width: double.infinity,
-                      height: 45,
+                      height: 48,
                       decoration: BoxDecoration(
                         color: const Color(0xFFEAEAEA),
                         borderRadius: BorderRadius.circular(18),
