@@ -23,8 +23,8 @@ class _AddBroadcastSchedulePageState extends State<AddBroadcastSchedulePage> {
               padding: const EdgeInsets.only(left: 18, right: 18, bottom: 18),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CustomHeaderContent(label: "Buat Jadwal Siaran"),
+                children: const [
+                  CustomHeaderContent(label: "Buat Jadwal Siaran"),
                   bottomLine,
                 ],
               ),

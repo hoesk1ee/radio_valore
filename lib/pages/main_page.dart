@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.supervised_user_circle_outlined,
                         color: Colors.white,
@@ -173,7 +173,7 @@ class _MainPageState extends State<MainPage> {
           selectedItemColor: Color(0xFF1246AD),
           unselectedItemColor: Colors.grey,
           showUnselectedLabels: true,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_filled),
               label: "Beranda",

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:radio_volare/pages/main_page.dart';
 import 'pages/login_page.dart';
 
 void main() {

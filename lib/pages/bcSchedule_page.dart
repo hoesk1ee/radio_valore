@@ -16,13 +16,13 @@ class BroadcastSchedule extends StatefulWidget {
 class _BroadcastScheduleState extends State<BroadcastSchedule> {
   List<DropdownMenuItem<String>> get dayList {
     List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(child: Text("Senin"), value: "Senin"),
-      DropdownMenuItem(child: Text("Selasa"), value: "Selasa"),
-      DropdownMenuItem(child: Text("Rabu"), value: "Rabu"),
-      DropdownMenuItem(child: Text("Kamis"), value: "Kamis"),
-      DropdownMenuItem(child: Text("Jumat"), value: "Jumat"),
-      DropdownMenuItem(child: Text("Sabtu"), value: "Sabtu"),
-      DropdownMenuItem(child: Text("Minggu"), value: "Minggu"),
+      DropdownMenuItem(value: "Senin", child: Text("Senin")),
+      DropdownMenuItem(value: "Selasa", child: Text("Selasa")),
+      DropdownMenuItem(value: "Rabu", child: Text("Rabu")),
+      DropdownMenuItem(value: "Kamis", child: Text("Kamis")),
+      DropdownMenuItem(value: "Jumat", child: Text("Jumat")),
+      DropdownMenuItem(value: "Sabtu", child: Text("Sabtu")),
+      DropdownMenuItem(value: "Minggu", child: Text("Minggu")),
     ];
     return menuItems;
   }
@@ -82,7 +82,7 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
                   ),
                   Expanded(
                     child: Scrollbar(
-                      isAlwaysShown: true,
+                      thumbVisibility: true,
                       thickness: 5,
                       radius: Radius.circular(18),
                       child: ListView.builder(
@@ -96,28 +96,62 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
                                   children: [
                                     Row(
                                       children: [
-                                        Text("Ruang Publik"),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "Ruang Publik",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Row(
+                                              children: const [
+                                                Icon(
+                                                  Icons.person,
+                                                  size: 18,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  "Orang",
+                                                  style:
+                                                      TextStyle(fontSize: 11),
+                                                ),
+                                                SizedBox(
+                                                  width: 18,
+                                                ),
+                                                Icon(
+                                                  Icons.person,
+                                                  size: 18,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  "Orang",
+                                                  style:
+                                                      TextStyle(fontSize: 11),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                         Spacer(),
-                                        Text("09:00 - 10:00")
+                                        Column(
+                                          children: const [
+                                            Text("09:00"),
+                                            Text(
+                                              "Minggu",
+                                              style: TextStyle(fontSize: 11),
+                                            )
+                                          ],
+                                        )
                                       ],
                                     ),
                                     SizedBox(
                                       height: 8,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.person,
-                                          size: 18,
-                                        ),
-                                        SizedBox(
-                                          width: 8,
-                                        ),
-                                        Text(
-                                          "Orang",
-                                          style: TextStyle(fontSize: 11),
-                                        ),
-                                      ],
                                     ),
                                     SizedBox(
                                       height: 8,
