@@ -17,7 +17,7 @@ class CustomDropDownButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 18.0, top: 6),
+      padding: const EdgeInsets.only(bottom: 12.0, top: 6),
       child: DropdownButtonHideUnderline(
         child: Container(
           decoration: BoxDecoration(

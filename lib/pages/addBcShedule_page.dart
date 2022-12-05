@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:radio_volare/resources/constant.dart';
+import 'package:radio_volare/resources/custom_MultiLineTextField.dart';
+import 'package:radio_volare/resources/custom_actionButton.dart';
 import 'package:radio_volare/resources/custom_dropDownButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 import 'package:radio_volare/resources/custom_headerStyle.dart';
+import 'package:radio_volare/resources/custom_inputTextField.dart';
 
 class AddBroadcastSchedulePage extends StatefulWidget {
   const AddBroadcastSchedulePage({Key? key}) : super(key: key);
@@ -14,29 +17,18 @@ class AddBroadcastSchedulePage extends StatefulWidget {
 
 class _AddBroadcastSchedulePageState extends State<AddBroadcastSchedulePage> {
   String? programValue;
-
-  List<DropdownMenuItem<String>> get programList {
-    List<DropdownMenuItem<String>> programItems = [
-      DropdownMenuItem(
-          value: "BBCTopOfthePops", child: Text("BBCTopOfthePops")),
-      DropdownMenuItem(value: "Dunia Kampus", child: Text("Dunia Kampus")),
-      DropdownMenuItem(value: "RuangMusik", child: Text("RuangMusik")),
-      DropdownMenuItem(value: "RuangTamu", child: Text("RuangTamu")),
-      DropdownMenuItem(value: "VolareGRESS", child: Text("VolareGRESS")),
-      DropdownMenuItem(value: "VolareSiang", child: Text("VolareSiang")),
-      DropdownMenuItem(value: "MusikSore", child: Text("MusikSore")),
-      DropdownMenuItem(value: "Vnos", child: Text("Vnos")),
-      DropdownMenuItem(value: "VnosX", child: Text("VnosX")),
-      DropdownMenuItem(value: "VoaThisMorning", child: Text("VoaThisMorning")),
-      DropdownMenuItem(value: "VoaPlus", child: Text("VoaPlus")),
-      DropdownMenuItem(value: "VoaWeekend", child: Text("VoaWeekend")),
-    ];
-    return programItems;
-  }
+  final TextEditingController _firstEmployeeController =
+      TextEditingController();
+  final TextEditingController _secondEmployeeController =
+      TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  String? dayValue;
+  String? timeValue;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           const CustomHeaderStyle(),
@@ -48,8 +40,8 @@ class _AddBroadcastSchedulePageState extends State<AddBroadcastSchedulePage> {
                 children: [
                   CustomHeaderContent(label: "Buat Jadwal Siaran"),
                   bottomLine,
+                  //Form Content
                   Text("Program"),
-                  //Dropdown List
                   CustomDropDownButton(
                     hintText: Text("Nama Program"),
                     value: programValue,
@@ -62,7 +54,60 @@ class _AddBroadcastSchedulePageState extends State<AddBroadcastSchedulePage> {
                       );
                     },
                   ),
-                  //Form Content
+                  Text("Petugas 1"),
+                  CustomInputTextField(
+                    controller: _firstEmployeeController,
+                    hintText: "Masukkan Nama",
+                  ),
+                  Text("Petugas 2"),
+                  CustomInputTextField(
+                    controller: _secondEmployeeController,
+                    hintText: "Masukkan Nama",
+                  ),
+                  Text("Hari"),
+                  CustomDropDownButton(
+                    hintText: Text("- Pilih Hari -"),
+                    value: dayValue,
+                    items: dayList,
+                    onChanged: (dynamic newValue) {
+                      setState(
+                        () {
+                          dayValue = newValue!;
+                        },
+                      );
+                    },
+                  ),
+                  Text("Jam"),
+                  CustomDropDownButton(
+                    hintText: Text("- Pilih Jam -"),
+                    value: timeValue,
+                    items: timeList,
+                    onChanged: (dynamic newValue) {
+                      setState(
+                        () {
+                          timeValue = newValue!;
+                        },
+                      );
+                    },
+                  ),
+                  Text("Keterangan"),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  Expanded(
+                    child: CustomMultiLineTextField(
+                      controller: _descriptionController,
+                      hintText: "Masukkan Keterangan",
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  CustomActionButton(
+                      onTap: () {},
+                      text: "Simpan",
+                      buttonColor: saveButtonColor,
+                      textStyle: textStyleWithoutBold)
                 ],
               ),
             ),

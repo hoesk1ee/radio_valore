@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:radio_volare/resources/custom_MultiLineTextField.dart';
 import 'package:radio_volare/resources/custom_actionButton.dart';
 import 'package:radio_volare/resources/custom_inputTextField.dart';
 import '../resources/constant.dart';
@@ -115,30 +116,9 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                     child: const Text("Deskripsi"),
                   ),
                   Expanded(
-                    child: Container(
-                      height: 150,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFEAEAEA),
-                        borderRadius: BorderRadius.circular(18),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 18.0, right: 18, top: 12, bottom: 12),
-                        child: TextField(
-                          maxLines: 10,
-                          style: textFieldFontSize,
-                          controller: _descriptionController,
-                          decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.zero,
-                            border: InputBorder.none,
-                            hintText: "Masukkan Deskripsi",
-                            hintStyle: TextStyle(
-                              fontSize: 12,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ),
-                      ),
+                    child: CustomMultiLineTextField(
+                      controller: _descriptionController,
+                      hintText: "Masukkan Deskripsi",
                     ),
                   ),
                   const SizedBox(

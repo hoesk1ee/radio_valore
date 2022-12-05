@@ -15,19 +15,6 @@ class BroadcastSchedule extends StatefulWidget {
 }
 
 class _BroadcastScheduleState extends State<BroadcastSchedule> {
-  List<DropdownMenuItem<String>> get dayList {
-    List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(value: "Senin", child: Text("Senin")),
-      DropdownMenuItem(value: "Selasa", child: Text("Selasa")),
-      DropdownMenuItem(value: "Rabu", child: Text("Rabu")),
-      DropdownMenuItem(value: "Kamis", child: Text("Kamis")),
-      DropdownMenuItem(value: "Jumat", child: Text("Jumat")),
-      DropdownMenuItem(value: "Sabtu", child: Text("Sabtu")),
-      DropdownMenuItem(value: "Minggu", child: Text("Minggu")),
-    ];
-    return menuItems;
-  }
-
   String? dayValue;
 
   @override
@@ -156,12 +143,14 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
           ),
         ],
       ),
-      floatingActionButton: CustomFloatingButton(onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => AddBroadcastSchedulePage()));
-      }),
+      floatingActionButton: CustomFloatingButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AddBroadcastSchedulePage()));
+        },
+      ),
     );
   }
 }
