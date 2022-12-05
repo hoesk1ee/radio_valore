@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:radio_volare/pages/addBcShedule_page.dart';
 import 'package:radio_volare/resources/constant.dart';
 import 'package:radio_volare/resources/custom_cardContent.dart';
+import 'package:radio_volare/resources/custom_dropDownButton.dart';
 import 'package:radio_volare/resources/custom_floatingButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 import 'package:radio_volare/resources/custom_headerStyle.dart';
@@ -45,39 +46,20 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
                     children: [
                       const CustomHeaderContent(label: "Jadwal Siaran"),
                       bottomLine,
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 6.0),
-                        child: const Text("Hari"),
-                      ),
+                      const Text("Hari"),
                       //Dropdown List
-                      DropdownButtonHideUnderline(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFEAEAEA),
-                            borderRadius: BorderRadius.circular(18),
-                          ),
-                          width: double.infinity,
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 18.0, right: 18),
-                            child: DropdownButton(
-                              hint: Text("- Pilih Hari -"),
-                              value: dayValue,
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 12),
-                              items: dayList,
-                              onChanged: (String? newValue) {
-                                setState(() {
-                                  dayValue = newValue!;
-                                });
-                              },
-                            ),
-                          ),
-                        ),
+                      CustomDropDownButton(
+                        hintText: Text("- Pilih Hari -"),
+                        value: dayValue,
+                        items: dayList,
+                        onChanged: (dynamic newValue) {
+                          setState(
+                            () {
+                              dayValue = newValue!;
+                            },
+                          );
+                        },
                       ),
-                      SizedBox(
-                        height: 18,
-                      ),
-                      //Content
                     ],
                   ),
                   Expanded(
@@ -183,3 +165,31 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
     );
   }
 }
+
+//Padding(
+//                       //   padding: const EdgeInsets.only(bottom: 18.0),
+//                       //   child: DropdownButtonHideUnderline(
+//                       //     child: Container(
+//                       //       decoration: BoxDecoration(
+//                       //         color: const Color(0xFFEAEAEA),
+//                       //         borderRadius: BorderRadius.circular(18),
+//                       //       ),
+//                       //       width: double.infinity,
+//                       //       child: Padding(
+//                       //         padding: EdgeInsets.only(left: 18.0, right: 18),
+//                       //         child: DropdownButton(
+//                       //           hint: Text("- Pilih Hari -"),
+//                       //           value: dayValue,
+//                       //           style: TextStyle(
+//                       //               color: Colors.black, fontSize: 12),
+//                       //           items: dayList,
+//                       //           onChanged: (String? newValue) {
+//                       //             setState(() {
+//                       //               dayValue = newValue!;
+//                       //             });
+//                       //           },
+//                       //         ),
+//                       //       ),
+//                       //     ),
+//                       //   ),
+//                       // ),

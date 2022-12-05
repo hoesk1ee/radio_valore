@@ -145,6 +145,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                     height: 12,
                   ),
                   CustomActionButton(
+                    textStyle: textStyleWithoutBold,
                     onTap: () {},
                     text: "Simpan",
                     buttonColor: saveButtonColor,

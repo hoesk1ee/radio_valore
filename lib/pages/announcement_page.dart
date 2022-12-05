@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radio_volare/pages/showAnnouncement_page.dart';
 import 'package:radio_volare/resources/custom_cardContent.dart';
 import 'package:radio_volare/resources/custom_floatingButton.dart';
 
@@ -41,46 +42,50 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                         itemCount: 5,
                         itemBuilder: (BuildContext context, int index) {
                           return CardContent(
-                              content: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Perihal : Waktu Absensi",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Text(
-                                      "Rabu, 26 Oktober 2022 | 9:59 PM",
-                                      style: TextStyle(
-                                          color: Colors.grey, fontSize: 12),
-                                    ),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                        "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan..."),
-                                    Spacer(),
-                                    Align(
-                                      alignment: Alignment.centerRight,
-                                      child: GestureDetector(
-                                        onTap: () {},
-                                        child: Text(
-                                          "Selengkapnya »",
-                                          style: TextStyle(
-                                            color: Colors.blue,
-                                            decoration:
-                                                TextDecoration.underline,
+                            content: Padding(
+                              padding: const EdgeInsets.all(18.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Perihal : Waktu Absensi",
+                                    style: contentHeaderTextStyle,
+                                  ),
+                                  Text(
+                                    "26 Oktober 2022 - 09:59",
+                                    style: contentTimeTextStyle,
+                                  ),
+                                  SizedBox(
+                                    height: 12,
+                                  ),
+                                  Text(
+                                    "Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan Mengingatkan kembali kepada semua petugas, bahwa dalam perhitungan absensi, akan diperhitungkan ",
+                                    textAlign: TextAlign.justify,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Spacer(),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                ShowAnnouncement(),
                                           ),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
+                                        );
+                                      },
+                                      child: Text("Selengkapnya »",
+                                          style: hyperlinkTextStyle),
+                                    ),
+                                  )
+                                ],
                               ),
-                              height: 185);
+                            ),
+                            height: 185,
+                          );
                         },
                       ),
                     ),

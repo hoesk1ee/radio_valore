@@ -7,12 +7,14 @@ class CustomActionButton extends StatelessWidget {
       {Key? key,
       required this.onTap,
       required this.text,
-      required this.buttonColor})
+      required this.buttonColor,
+      required this.textStyle})
       : super(key: key);
 
   final Function() onTap;
   final String text;
   final Color buttonColor;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class CustomActionButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: textStyleWithoutBold,
+            style: textStyle,
           ),
         ),
       ),

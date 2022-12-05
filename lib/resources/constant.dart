@@ -20,3 +20,15 @@ const textStyleWithoutBold = TextStyle(color: Colors.white, fontSize: 16);
 const cancelButtonColor = Color(0xffD1D3D9);
 
 const bodyPadding = EdgeInsets.only(left: 18.0, right: 18, bottom: 18);
+
+const backActionButtonTextStyle = TextStyle(color: Colors.black, fontSize: 16);
+
+const contentHeaderTextStyle =
+    TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16);
+
+const contentTimeTextStyle = TextStyle(color: Colors.grey, fontSize: 12);
+
+const hyperlinkTextStyle = TextStyle(
+  color: Colors.blue,
+  decoration: TextDecoration.underline,
+);
