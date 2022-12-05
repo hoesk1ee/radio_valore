@@ -77,14 +77,6 @@ class _ShowAnnouncementState extends State<ShowAnnouncement> {
                       height: MediaQuery.of(context).size.height,
                     ),
                   ),
-                  CustomActionButton(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    text: "Kembali",
-                    buttonColor: Color(0xFFD1D3D9),
-                    textStyle: backActionButtonTextStyle,
-                  )
                 ],
               ),
             ),
