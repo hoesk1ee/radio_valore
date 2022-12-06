@@ -5,6 +5,7 @@ import 'package:radio_volare/resources/custom_broadcastButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 
 import '../resources/custom_headerStyle.dart';
+import 'bcScript_page.dart';
 
 class BroadcastPage extends StatefulWidget {
   const BroadcastPage({Key? key}) : super(key: key);
@@ -31,7 +32,12 @@ class _BroadcastPageState extends State<BroadcastPage> {
                   CustomBroadcastButton(
                     icon: Icons.broadcast_on_home_outlined,
                     text: "Naskah Siaran",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BroadcastScript()));
+                    },
                   ),
                   SizedBox(
                     height: 18,

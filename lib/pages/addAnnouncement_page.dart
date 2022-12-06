@@ -91,7 +91,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                           IconButton(
                             icon: const Icon(
                               Icons.date_range_outlined,
-                              color: Colors.black,
+                              color: Color(0xFF1246AD),
                             ),
                             onPressed: () async {
                               DateTime? newDate = await showDatePicker(
