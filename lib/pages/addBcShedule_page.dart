@@ -41,73 +41,81 @@ class _AddBroadcastSchedulePageState extends State<AddBroadcastSchedulePage> {
                   CustomHeaderContent(label: "Buat Jadwal Siaran"),
                   bottomLine,
                   //Form Content
-                  Text("Program"),
-                  CustomDropDownButton(
-                    hintText: Text("Nama Program"),
-                    value: programValue,
-                    items: programList,
-                    onChanged: (dynamic newValue) {
-                      setState(
-                        () {
-                          programValue = newValue!;
-                        },
-                      );
-                    },
-                  ),
-                  Text("Petugas 1"),
-                  CustomInputTextField(
-                    controller: _firstEmployeeController,
-                    hintText: "Masukkan Nama",
-                  ),
-                  Text("Petugas 2"),
-                  CustomInputTextField(
-                    controller: _secondEmployeeController,
-                    hintText: "Masukkan Nama",
-                  ),
-                  Text("Hari"),
-                  CustomDropDownButton(
-                    hintText: Text("- Pilih Hari -"),
-                    value: dayValue,
-                    items: dayList,
-                    onChanged: (dynamic newValue) {
-                      setState(
-                        () {
-                          dayValue = newValue!;
-                        },
-                      );
-                    },
-                  ),
-                  Text("Jam"),
-                  CustomDropDownButton(
-                    hintText: Text("- Pilih Jam -"),
-                    value: timeValue,
-                    items: timeList,
-                    onChanged: (dynamic newValue) {
-                      setState(
-                        () {
-                          timeValue = newValue!;
-                        },
-                      );
-                    },
-                  ),
-                  Text("Keterangan"),
-                  const SizedBox(
-                    height: 6,
-                  ),
                   Expanded(
-                    child: CustomMultiLineTextField(
-                      controller: _descriptionController,
-                      hintText: "Masukkan Keterangan",
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Program"),
+                          CustomDropDownButton(
+                            hintText: Text("Nama Program"),
+                            value: programValue,
+                            items: programList,
+                            onChanged: (dynamic newValue) {
+                              setState(
+                                () {
+                                  programValue = newValue!;
+                                },
+                              );
+                            },
+                          ),
+                          Text("Petugas 1"),
+                          CustomInputTextField(
+                            controller: _firstEmployeeController,
+                            hintText: "Masukkan Nama",
+                          ),
+                          Text("Petugas 2"),
+                          CustomInputTextField(
+                            controller: _secondEmployeeController,
+                            hintText: "Masukkan Nama",
+                          ),
+                          Text("Hari"),
+                          CustomDropDownButton(
+                            hintText: Text("- Pilih Hari -"),
+                            value: dayValue,
+                            items: dayList,
+                            onChanged: (dynamic newValue) {
+                              setState(
+                                () {
+                                  dayValue = newValue!;
+                                },
+                              );
+                            },
+                          ),
+                          Text("Jam"),
+                          CustomDropDownButton(
+                            hintText: Text("- Pilih Jam -"),
+                            value: timeValue,
+                            items: timeList,
+                            onChanged: (dynamic newValue) {
+                              setState(
+                                () {
+                                  timeValue = newValue!;
+                                },
+                              );
+                            },
+                          ),
+                          Text("Keterangan"),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          CustomMultiLineTextField(
+                            height: 150,
+                            controller: _descriptionController,
+                            hintText: "Masukkan Keterangan",
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          CustomActionButton(
+                              onTap: () {},
+                              text: "Simpan",
+                              buttonColor: saveButtonColor,
+                              textStyle: textStyleWithoutBold)
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  CustomActionButton(
-                      onTap: () {},
-                      text: "Simpan",
-                      buttonColor: saveButtonColor,
-                      textStyle: textStyleWithoutBold)
                 ],
               ),
             ),

@@ -4,15 +4,17 @@ import 'constant.dart';
 
 class CustomMultiLineTextField extends StatelessWidget {
   const CustomMultiLineTextField(
-      {Key? key, required this.controller, required this.hintText})
+      {Key? key, required this.controller, required this.hintText, this.height})
       : super(key: key);
 
   final TextEditingController controller;
   final String hintText;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height,
       decoration: BoxDecoration(
         color: const Color(0xFFEAEAEA),
         borderRadius: BorderRadius.circular(18),
