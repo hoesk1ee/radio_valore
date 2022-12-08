@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:radio_volare/pages/broadcast_page.dart';
+import 'package:radio_volare/pages/broadcast/broadcast_page.dart';
 import 'package:radio_volare/resources/custom_menuButton.dart';
-
 import '../resources/constant.dart';
-import 'announcement_page.dart';
+import 'announcement/announcement_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);

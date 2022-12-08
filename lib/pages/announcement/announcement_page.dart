@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:radio_volare/pages/showAnnouncement_page.dart';
+import 'package:radio_volare/pages/announcement/showAnnouncement_page.dart';
 import 'package:radio_volare/resources/custom_cardContent.dart';
 import 'package:radio_volare/resources/custom_floatingButton.dart';
-
-import '../resources/constant.dart';
-import '../resources/custom_headerContent.dart';
-import '../resources/custom_headerStyle.dart';
+import 'package:radio_volare/resources/custom_hyperlinkText.dart';
+import '../../resources/constant.dart';
+import '../../resources/custom_headerContent.dart';
+import '../../resources/custom_headerStyle.dart';
 import 'addAnnouncement_page.dart';
 
 class AnnouncementPage extends StatefulWidget {
@@ -65,22 +65,17 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                   Spacer(),
-                                  Align(
-                                    alignment: Alignment.centerRight,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ShowAnnouncement(),
-                                          ),
-                                        );
-                                      },
-                                      child: Text("Selengkapnya »",
-                                          style: hyperlinkTextStyle),
-                                    ),
-                                  )
+                                  CustomHyperlinkText(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              ShowAnnouncement(),
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ],
                               ),
                             ),

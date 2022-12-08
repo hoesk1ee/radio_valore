@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:radio_volare/resources/constant.dart';
+import 'package:radio_volare/resources/custom_actionButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 import 'package:radio_volare/resources/custom_headerStyle.dart';
 import 'package:radio_volare/resources/custom_inputTextField.dart';
@@ -65,6 +66,7 @@ class _BroadcastScriptState extends State<BroadcastScript> {
                     hintText: "Masukkan Nama",
                   ),
                   Text("Tanggal"),
+                  //Date Range Picker
                   Row(
                     children: [
                       Expanded(
@@ -115,6 +117,14 @@ class _BroadcastScriptState extends State<BroadcastScript> {
                         ),
                       ),
                     ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 18.0, bottom: 18),
+                    child: CustomActionButton(
+                        onTap: () {},
+                        text: "CARI",
+                        buttonColor: Color(0xFF1246AD),
+                        textStyle: textStyleWithoutBold),
                   )
                 ],
               ),

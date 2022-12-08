@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:radio_volare/pages/addBcShedule_page.dart';
+import 'package:radio_volare/pages/broadcast/schedule/addBcSchedule_page.dart';
+import 'package:radio_volare/pages/broadcast/schedule/showBcSchedule_page.dart';
 import 'package:radio_volare/resources/constant.dart';
 import 'package:radio_volare/resources/custom_cardContent.dart';
 import 'package:radio_volare/resources/custom_dropDownButton.dart';
 import 'package:radio_volare/resources/custom_floatingButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 import 'package:radio_volare/resources/custom_headerStyle.dart';
+import 'package:radio_volare/resources/custom_hyperlinkText.dart';
 
 class BroadcastSchedule extends StatefulWidget {
   const BroadcastSchedule({Key? key}) : super(key: key);
@@ -126,13 +128,28 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
                                       height: 8,
                                     ),
                                     Text(
-                                      "Mengingatkan kembali kepada semua petugas, bahwa hujan deras sekali kawan :). Jangan lupa beli kopi untuk hari esok.",
+                                      "Mengingatkan  aku aku aku aku aku kembali kepada semua petugas, bahwa hujan deras sekali kawan :). Jangan lupa beli kopi untuk hari esok.",
                                       style: textFieldFontSize,
-                                    )
+                                      maxLines: 3,
+                                      textAlign: TextAlign.justify,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    Spacer(),
+                                    CustomHyperlinkText(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                ShowBroadcastSchedule(),
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   ],
                                 ),
                               ),
-                              height: 165,
+                              height: 185,
                             );
                           }),
                     ),
@@ -154,31 +171,3 @@ class _BroadcastScheduleState extends State<BroadcastSchedule> {
     );
   }
 }
-
-//Padding(
-//                       //   padding: const EdgeInsets.only(bottom: 18.0),
-//                       //   child: DropdownButtonHideUnderline(
-//                       //     child: Container(
-//                       //       decoration: BoxDecoration(
-//                       //         color: const Color(0xFFEAEAEA),
-//                       //         borderRadius: BorderRadius.circular(18),
-//                       //       ),
-//                       //       width: double.infinity,
-//                       //       child: Padding(
-//                       //         padding: EdgeInsets.only(left: 18.0, right: 18),
-//                       //         child: DropdownButton(
-//                       //           hint: Text("- Pilih Hari -"),
-//                       //           value: dayValue,
-//                       //           style: TextStyle(
-//                       //               color: Colors.black, fontSize: 12),
-//                       //           items: dayList,
-//                       //           onChanged: (String? newValue) {
-//                       //             setState(() {
-//                       //               dayValue = newValue!;
-//                       //             });
-//                       //           },
-//                       //         ),
-//                       //       ),
-//                       //     ),
-//                       //   ),
-//                       // ),

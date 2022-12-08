@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:radio_volare/resources/custom_MultiLineTextField.dart';
 import 'package:radio_volare/resources/custom_actionButton.dart';
 import 'package:radio_volare/resources/custom_inputTextField.dart';
-import '../resources/constant.dart';
-import '../resources/custom_headerContent.dart';
-import '../resources/custom_headerStyle.dart';
+import '../../resources/constant.dart';
+import '../../resources/custom_headerContent.dart';
+import '../../resources/custom_headerStyle.dart';
 import 'package:intl/intl.dart';
 
 class AddAnnouncementPage extends StatefulWidget {
@@ -127,7 +127,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                   CustomActionButton(
                     textStyle: textStyleWithoutBold,
                     onTap: () {},
-                    text: "Simpan",
+                    text: "SIMPAN",
                     buttonColor: saveButtonColor,
                   ),
                 ],

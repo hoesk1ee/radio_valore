@@ -109,7 +109,7 @@ class _AddBroadcastSchedulePageState extends State<AddBroadcastSchedulePage> {
                           ),
                           CustomActionButton(
                               onTap: () {},
-                              text: "Simpan",
+                              text: "SIMPAN",
                               buttonColor: saveButtonColor,
                               textStyle: textStyleWithoutBold)
                         ],

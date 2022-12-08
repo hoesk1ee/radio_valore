@@ -4,7 +4,7 @@ import 'package:radio_volare/resources/custom_cardContent.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 import 'package:radio_volare/resources/custom_headerStyle.dart';
 
-import '../resources/constant.dart';
+import '../../resources/constant.dart';
 
 class ShowAnnouncement extends StatefulWidget {
   const ShowAnnouncement({Key? key}) : super(key: key);
@@ -27,8 +27,8 @@ class _ShowAnnouncementState extends State<ShowAnnouncement> {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const CustomHeaderContent(label: "Pengumuman"),
+                    children: const [
+                      CustomHeaderContent(label: "Pengumuman"),
                       bottomLine,
                     ],
                   ),

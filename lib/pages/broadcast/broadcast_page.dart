@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:radio_volare/pages/bcSchedule_page.dart';
+import 'package:radio_volare/pages/broadcast/schedule/bcSchedule_page.dart';
 import 'package:radio_volare/resources/constant.dart';
 import 'package:radio_volare/resources/custom_broadcastButton.dart';
 import 'package:radio_volare/resources/custom_headerContent.dart';
 
-import '../resources/custom_headerStyle.dart';
-import 'bcScript_page.dart';
+import '../../resources/custom_headerStyle.dart';
+import 'script/bcScript_page.dart';
 
 class BroadcastPage extends StatefulWidget {
   const BroadcastPage({Key? key}) : super(key: key);
